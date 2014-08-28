@@ -256,22 +256,11 @@
 									
 									<div class="sec wbkt-select">
 										<select name="cardstartyear" class="styled" id="cardstartyear" value = "$cardstartyear">
-										 <script>
-											$(document).ready(function () {
-												var presDate = new Date(); 
-												var presYear = presDate.getFullYear(); 
-												 arr=Array();
-												 var index;
-												 var strk;
-												for(var j=2000; j <=presYear;  j++ )
-												{ arr.push(j);}
-												for(index in arr){
-												strk=arr[index];
-												strk=strk.toString().substr(2,2);
-												
-													document.write('<option value="'+strk+'">'+strk+'</option>'); } 
-											});
-											</script>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
 										</select>
 									</div><!-- .sec -->
 								</td>
@@ -297,21 +286,11 @@
 							
 									<div class="sec wbkt-select">
 										<select name="cardexpireyear" class="styled" id="cardexpireyear" value="$cardexpireyear">
-										 <script>
-										 $(document).ready(function () {
-												var myDate = new Date(); 
-												var year = myDate.getFullYear(); 
-												arra=Array();
-												var ind;
-												var out;
-												for(var i =year; i <=year+10; i++){ 
-													arra.push(i);}
-													for(ind in arra){
-													out=arra[ind];
-													out=out.toString().substr(2,2);
-													document.write('<option value="'+out+'">'+out+'</option>'); } 
-											});
-											</script>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
 										</select>
 									</div><!-- .sec -->
 								</td>
@@ -327,6 +306,7 @@
 			</div><!-- .content_wrapp -->
 		</div><!--.row -->
 	</div><!--.wrapper -->
+
 </div><!-- .outter -->
 </body>
 </html>
