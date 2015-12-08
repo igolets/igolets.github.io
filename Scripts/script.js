@@ -132,8 +132,10 @@ function AnswerQuestion() {
     if (quizSelected === quizItem) {
         quizCorrectAnswers++;
         ShowAnswerIsCorrect();
+	_gaq.push(['_trackEvent', 'Answer', 'Correct'])
     } else {
         ShowAnswerIncorrect();
+	_gaq.push(['_trackEvent', 'Answer', 'Wrong'])
     }
     UpdateTotalCounts();
     NextQuestion();
