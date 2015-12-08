@@ -132,10 +132,10 @@ function AnswerQuestion() {
     if (quizSelected === quizItem) {
         quizCorrectAnswers++;
         ShowAnswerIsCorrect();
-	_gaq.push(['_trackEvent', 'Answer', 'Correct'])
+	ga('send', 'event', 'Answer', 'Correct', quizItem.title);
     } else {
         ShowAnswerIncorrect();
-	_gaq.push(['_trackEvent', 'Answer', 'Wrong'])
+	ga('send', 'event', 'Answer', 'Wrong', quizItem.title);
     }
     UpdateTotalCounts();
     NextQuestion();
