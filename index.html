@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Игра "Карта Таганрога"</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="Content/bootstrap-theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="Content/main.css" />
+    <script type="text/javascript" src="Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/script.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbnzibqWk53pZckltkxfcyF_Dnk4u7jfQ&callback=initMap">
+    </script>
+
+</head>
+<body>
+    <div id="quiz" class="container">
+        <h2>Вопрос на знание Таганрога</h2>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Прочитайте вопрос, выберите объект на карте и нажмите кнопку "Ответить".
+            </div>
+            <div class="panel-body" id="quizQuestion">
+                Текст вопроса
+            </div>
+        </div>
+        <p>
+            <button type="submit" class="btn btn-primary" id="quizAnswer">Ответить</button>
+        </p>
+        <div id="quizMessageCorrect" class="alert alert-success hidden" role="alert">Верно!</div>
+        <div id="quizMessageWrong" class="alert alert-danger hidden" role="alert">Не верно!</div>
+        <p class="well well-lg">
+            Общий счет: <span id="quizCorrectAnswers">0</span> из <span id="quizAnswered">0</span>!
+        </p>
+    </div>
+
+    <div id="map"></div>
+</body>
+</html>
