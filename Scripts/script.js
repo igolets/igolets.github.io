@@ -72,6 +72,7 @@ var points = [
     }
 ];
 var markers = [];
+var questionNo;
 var lastInfoWin;
 var quizItem;
 var quizSelected;
@@ -156,11 +157,19 @@ function initMap() {
 
     $("#quizAnswer").click(AnswerQuestion);
 
+    markers = shuffle(markers);
+    questionNo = 0;
+
     NextQuestion();
 }
 
 function NextQuestion() {
-    var tempMarker = markers[Math.floor(Math.random() * markers.length)];
+    var tempMarker = markers[questionNo];
+    questionNo++;
+    if (questionNo >= markers.length) {
+        markers = shuffle(markers);
+        questionNo = 0;
+    }
     quizItem = tempMarker['customInfo'];
     $("#quizQuestion").text(quizItem.question);
     quizSelected = undefined;
@@ -207,4 +216,23 @@ function StopAnimations() {
     markers.forEach(function (item) {
         item.setAnimation(null);
     });
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
